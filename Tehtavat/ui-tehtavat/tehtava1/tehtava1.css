@@ -52,7 +52,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #ddd; /* Change to a lighter color on hover */
+    color: orange; /* Change to orange on hover */
 }
 
 /* Absolute Positioned Image */
