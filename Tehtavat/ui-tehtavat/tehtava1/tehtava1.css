@@ -89,7 +89,8 @@ body {
 
 .more-about-us .about-image {
     float: right;
-    width: 35%; /* Percentage-based width for responsive layout */
+    width: 397px;
+    height: 367px;
     text-align: center;
 }
 
