@@ -5,6 +5,11 @@ body {
     padding: 0;
     box-sizing: border-box;
     position: relative; /* Ensure the body is positioned relative for absolute positioning */
+    background-image: url('images/orangebackground.jpg');
+    background-size: cover; /* Ensure the image covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Fix the background image during scrolling */
 }
 
 /* Navigation Bar */
