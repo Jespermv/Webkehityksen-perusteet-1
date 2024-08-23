@@ -74,6 +74,7 @@ body {
     overflow: hidden;
     clear: both;
     margin-top: 30%; /* Ensure there's enough space for the absolute image */
+    z-index: 2; /* Ensure it's above the absolute image */
 }
 
 .more-about-us .about-text {
