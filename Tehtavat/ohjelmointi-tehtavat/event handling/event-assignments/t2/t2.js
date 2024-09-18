@@ -770,4 +770,52 @@ const restaurants = [
   },
 ];
 
-// your code here
+restaurants.sort((a, b) => a.name.localeCompare(b.name));
+
+function renderRestaurants() {
+  const restaurantList = document.getElementById('restaurant-list');
+  restaurantList.innerHTML = '';
+
+  restaurants.forEach((restaurant, index) => {
+    const row = document.createElement('tr');
+    row.dataset.index = index;
+
+    const nameCell = document.createElement('td');
+    const addressCell = document.createElement('td');
+
+    nameCell.textContent = restaurant.name;
+    addressCell.textContent = restaurant.address;
+
+    row.addEventListener('click', () => highlightRestaurant(index));
+
+    row.appendChild(nameCell);
+    row.appendChild(addressCell);
+    restaurantList.appendChild(row);
+  });
+}
+
+function highlightRestaurant(index) {
+  const rows = document.querySelectorAll('tbody tr');
+  rows.forEach(row => row.classList.remove('highlight'));
+
+  const selectedRow = rows[index];
+  selectedRow.classList.add('highlight');
+
+  const restaurant = restaurants[index];
+  document.getElementById('modal-name').textContent = restaurant.name;
+  document.getElementById('modal-address').textContent = restaurant.address;
+  document.getElementById('modal-postalCode').textContent =
+    restaurant.postalCode;
+  document.getElementById('modal-city').textContent = restaurant.city;
+  document.getElementById('modal-phone').textContent = restaurant.phone;
+  document.getElementById('modal-company').textContent = restaurant.company;
+
+  const modal = document.getElementById('restaurant-modal');
+  modal.showModal();
+}
+
+document.getElementById('close-modal').addEventListener('click', () => {
+  document.getElementById('restaurant-modal').close();
+});
+
+renderRestaurants();

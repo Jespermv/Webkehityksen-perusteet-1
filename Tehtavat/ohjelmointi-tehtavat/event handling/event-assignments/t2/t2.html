@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Restaurants</title>
   <link rel="stylesheet" href="t2.css">
   <script src="t2.js" defer></script>
 </head>
@@ -16,11 +16,19 @@
       <th>Name</th>
       <th>Address</th>
     </tr>
-    <!-- add restaurants here -->
+    <!-- Restaurants will be added here via JavaScript -->
+    <tbody id="restaurant-list"></tbody>
   </table>
-  <!-- modal -->
-  <dialog>
-    <!-- add restaurant info here when restaurant is clicked -->
+
+  <!-- Modal for detailed restaurant info -->
+  <dialog id="restaurant-modal">
+    <h2 id="modal-name"></h2>
+    <p><strong>Address:</strong> <span id="modal-address"></span></p>
+    <p><strong>Postal Code:</strong> <span id="modal-postalCode"></span></p>
+    <p><strong>City:</strong> <span id="modal-city"></span></p>
+    <p><strong>Phone:</strong> <span id="modal-phone"></span></p>
+    <p><strong>Company:</strong> <span id="modal-company"></span></p>
+    <button id="close-modal">Close</button>
   </dialog>
 </body>
 
