@@ -1,0 +1,265 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    background-color: orange;
+}
+
+/* Navigation Bar */
+.navigation {
+    background-color: #333;
+    color: white;
+    padding: 2%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between; /* Spread navigation and button */
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.companyname {
+    font-size: 2.5em;
+    color: orange;
+}
+
+.nav-links a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+}
+
+.login-btn {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* Hero Section */
+.hero {
+    height: 40vh; /* Set the height of the hero section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Prevent overflow */
+    max-width: 50%; /* Ensure it doesn't stretch to edges */
+    margin: 0 auto; /* Center the hero section */
+    margin-top: 2%;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center align */
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    background-image: url('images/hero.jpg'); 
+    background-size: cover; /* Ensure it covers the area */
+    background-position: center;
+    z-index: 0; /* Behind the content */
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Above the background image */
+    max-width: 100%; /* Adjusted to control the size */
+}
+
+/* Responsive Text */
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+/* Pill Buttons Below Hero Section */
+.pill-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Space above the buttons */
+}
+
+.pill-buttons .pill-button {
+    background-color: #ff7f00; /* Button color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px; /* Pill shape */
+    margin: 0 10px; /* Space between buttons */
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.pill-buttons .pill-button:hover {
+    background-color: #e66b00; /* Darker shade on hover */
+}
+
+/* Product Card Styles */
+.product {
+    background-color: #fff; /* Set background color for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Clip the image */
+    text-align: center; /* Center text */
+}
+
+/* Set a fixed size for images */
+.product img {
+    width: 100%; /* Make the image fill the product card width */
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Cover the entire area without distorting */
+    border-radius: 10px 10px 0 0; /* Round top corners */
+}
+
+/* Adjust the product grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Absolute Positioned Image (Burger) */
+.absolute-image {
+    margin-top: 5%; /* Adjust to provide space below the hero section */
+    display: flex;
+    justify-content: center;
+}
+
+.absolute-image img {
+    width: 35%;
+    height: auto;
+}
+
+/* More About Us Section */
+.more-about-us {
+    background-color: #f4f4f4;
+    padding: 10%;
+    clear: both;
+    margin-top: 10%;
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+/* About text and image sections */
+.more-about-us .about-text {
+    flex: 1 1 60%; /* Flex-grow, flex-shrink, and base width */
+    padding: 20px;
+}
+
+.more-about-us .about-image {
+    flex: 1 1 30%; /* Flex-grow, flex-shrink, and base width */
+}
+
+.more-about-us img {
+    width: 100%;
+    height: auto;
+}
+
+/* Dialog Styles */
+#loginDialog {
+    width: 40%; /* Adjust size of the dialog */
+    max-width: 500px;
+    border: none;
+    padding: 3%;
+    background-color: white;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+#loginDialog form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+}
+
+#loginDialog form h2 {
+    font-size: 2em;
+    margin-bottom: 10%;
+    color: #333; /* Darker text color for contrast */
+}
+
+/* Input Fields */
+#loginDialog input {
+    width: 90%;
+    padding: 1.5%;
+    margin-bottom: 5%;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Smooth corners */
+    font-size: 1em;
+}
+
+/* On Focus */
+#loginDialog input:focus {
+    outline: none;
+    border-color: #ff7f00; /* Highlight on focus */
+    box-shadow: 0 0 8px rgba(255, 127, 0, 0.2); /* Soft glow */
+}
+
+/* Error Messages */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -4%; /* Adjust margin to keep the spacing tight */
+    margin-bottom: 4%;
+    display: none;
+}
+
+/* Validation: Green border for valid, red for invalid */
+input:valid {
+    border-color: #28a745;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+/* Buttons inside the form */
+#loginDialog button {
+    background-color: #ff7f00;
+    color: white;
+    padding: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 48%;
+    margin: 5% 0; /* Add some spacing */
+    transition: background-color 0.3s;
+}
+
+#loginDialog button:hover {
+    background-color: #e66b00; /* Darker shade on hover */
+}
+
+#loginDialog button[type="button"] {
+    background-color: #ccc;
+}
+
+#loginDialog button[type="button"]:hover {
+    background-color: #aaa; /* Darker shade on hover */
+}
