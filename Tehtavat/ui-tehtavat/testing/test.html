@@ -16,12 +16,19 @@
                 <a href="#ruokalistat">Ruokalistat</a>
                 <a href="#yhteystiedot">Yhteystiedot</a>
             </nav>
-            <!-- Login Button -->
-            <button id="open-dialog">Login</button>
+            <button class="login-btn" id="openLoginDialog">Kirjaudu</button>
         </div>
     </header>
 
-    <!-- Absolute Positioned Image -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tervetuloa Jesperin Ravintolaan</h1>
+            <p>Tutustu parhaisiin makuihin ja annoksiin.</p>
+        </div>
+    </section>
+
+    <!-- Absolute Positioned Image (Burger) -->
     <div class="absolute-image">
         <img src="images/burger.jpg" alt="Juicy hamburger">
     </div>
@@ -37,25 +44,25 @@
         </div>
     </section>
 
-    <!-- Dialog Section -->
-    <dialog id="login-dialog">
-        <form method="dialog" id="login-form">
-            <h3>Login</h3>
-            <label for="name">Name:</label>
+    <!-- Login Dialog -->
+    <dialog id="loginDialog" class="login-dialog">
+        <form method="dialog">
+            <h2>Kirjaudu Sisään</h2>
+            <label for="name">Nimi:</label>
             <input type="text" id="name" name="name" minlength="3" required>
-            <span class="error-message" id="name-error">Name must be at least 3 characters long</span>
+            <span class="error-message" id="name-error">Name must be at least 3 characters long.</span>
 
-            <label for="email">Email:</label>
+            <label for="email">Sähköposti:</label>
             <input type="email" id="email" name="email" pattern=".+@metropolia\.fi" required>
-            <span class="error-message" id="email-error">Email must end with @metropolia.fi</span>
+            <span class="error-message" id="email-error">Email must end with @metropolia.fi.</span>
 
-            <label for="password">Password:</label>
+            <label for="password">Salasana:</label>
             <input type="password" id="password" name="password" pattern="(?=.*[A-Z])(?=.*\d).{6,}" required>
-            <span class="error-message" id="password-error">Password must contain at least one uppercase letter and one number</span>
+            <span class="error-message" id="password-error">Password must contain at least one uppercase letter and one number.</span>
 
             <menu>
-                <button type="submit">Submit</button>
-                <button type="reset" id="close-dialog">Cancel</button>
+                <button type="submit">Kirjaudu</button>
+                <button type="button" id="closeLoginDialog">Sulje</button>
             </menu>
         </form>
     </dialog>

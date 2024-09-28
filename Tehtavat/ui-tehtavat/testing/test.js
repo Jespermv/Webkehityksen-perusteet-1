@@ -1,9 +1,9 @@
-document.getElementById("open-dialog").addEventListener("click", () => {
-  document.getElementById("login-dialog").showModal();
+document.getElementById("openLoginDialog").addEventListener("click", () => {
+  document.getElementById("loginDialog").showModal();
 });
 
-document.getElementById("close-dialog").addEventListener("click", () => {
-  document.getElementById("login-dialog").close();
+document.getElementById("closeLoginDialog").addEventListener("click", () => {
+  document.getElementById("loginDialog").close();
 });
 
 // Form validation
@@ -37,3 +37,13 @@ passwordField.addEventListener("input", () => {
     errorMessage.style.display = "none";
   }
 });
+
+// Handle form submission
+document
+  .querySelector("form[method='dialog']")
+  .addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent default form submission
+    // Here you can add your login logic (e.g., validation or AJAX call)
+    alert("Login submitted!"); // For demonstration
+    document.getElementById("loginDialog").close(); // Close dialog after submission
+  });
